@@ -47,28 +47,27 @@ const arr = [1,2,3,4,5,6,7,7,8,6,10];
 
 // Bu kodun çıktısı nedir neden ?
 function job() {
-return new Promise(function(resolve, reject) {
-reject();
-});
+    return new Promise(function(resolve, reject) {
+        reject();
+    });
 }
+
 let promise = job();
-promise
-.then(function() {
-console.log('Success 1');
+
+promise.then(function() {
+    console.log('Success 1');
+}).then(function() {
+    console.log('Success 2');
 })
 .then(function() {
-console.log('Success 2');
-Ödev 3
-})
-.then(function() {
-console.log('Success 3');
+    console.log('Success 3');
 })
 .catch(function() {
-console.log('Error 1');
-})
-.then(function() {
-console.log('Success 4');
+    console.log('Error 1');
+}).then(function() {
+    console.log('Success 4');
 });
+
 // Bu kodun çıktısı nedir neden ?
 function job(state) {
 return new Promise(function(resolve, reject) {
